@@ -356,3 +356,8 @@ strong{ font-weight:600; }
     border-radius:14px;
   }
 }
+/* Center and constrain Elfsight widget like your old image */
+#reviews .elfsight-app-6a5371a3-bd07-4045-8cf5-e8c9d8ce5a31{
+  max-width: 900px;
+  margin: 24px auto 0;   /* matches your previous top gap */
+}
