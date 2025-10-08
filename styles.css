@@ -752,3 +752,208 @@ reviews-desktop .reviews-image {
     font-size: 13px;
   }
 }
+/* =========================
+   Meet the Owner — Elegant treatment
+========================= */
+#about .content-box{
+  position:relative;
+  max-width:520px;                 /* readable line length */
+  margin-left:auto;
+  margin-right:0;
+  padding: 6px 8px;                /* gives breathing for the card accent */
+}
+
+/* Subtle “paper” card behind the text for a designed feel */
+#about .content-box::before{
+  content:"";
+  position:absolute;
+  inset:-14px -18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+  border:1px solid rgba(42,33,28,0.08);
+  border-radius:16px;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.06));
+  z-index:-1;
+}
+
+/* Kicker (small, classy label) */
+.owner-kicker{
+  font-family:'Almarai',sans-serif;
+  font-size:12.5px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#b08a54;
+  margin:0 0 10px 2px;
+  opacity:.9;
+}
+
+/* Heading polish */
+#about .content-box .display{
+  letter-spacing:-0.02em;
+  margin-bottom:.55em;
+}
+
+/* Copy: smoother rhythm + micro-typography */
+.owner-copy{
+  font-family:'Almarai',sans-serif;
+  font-size:17px;
+  line-height:1.75;
+  color:#3b3029;
+  margin:0;
+  max-width:46ch;
+  text-wrap:pretty;
+  hyphens:auto;
+  opacity:.95;
+}
+
+/* Tasteful drop cap for desktop (automatically disabled on mobile) */
+.owner-copy::first-letter{
+  font-family:'Libre Baskerville',serif;
+  float:left;
+  font-size:3.2rem;
+  line-height:.88;
+  padding-right:10px;
+  padding-top:6px;
+  color:var(--ink);
+}
+
+/* Signature row for a human touch */
+.owner-signoff{
+  margin-top:16px;
+  padding-top:10px;
+  border-top:1px solid rgba(42,33,28,0.10);
+  display:flex; align-items:baseline; gap:10px;
+}
+.sig-name{
+  font-family:'Libre Baskerville',serif;
+  font-style:italic;
+  font-size:18px;
+  color:var(--ink);
+}
+.sig-role{
+  font-family:'Almarai',sans-serif;
+  font-size:13px;
+  color:#7d7166;
+  letter-spacing:.02em;
+}
+
+/* Photo refinement (subtle depth, already rounded) */
+#about .media-box img{
+  border-radius:20px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.08);
+}
+
+/* -------- Mobile adjustments (seamless, centered) -------- */
+@media (max-width:768px){
+  #about .content-box{
+    margin:0 auto;
+    text-align:center;
+    padding:0 8px;
+  }
+  #about .content-box::before{ inset:-10px -12px; }
+
+  .owner-copy{
+    margin:0 auto;
+    max-width:40ch;
+    text-align:center;
+  }
+  .owner-copy::first-letter{          /* disable drop-cap on small screens */
+    float:none; font-size:inherit; line-height:inherit; padding:0;
+  }
+
+  .owner-signoff{
+    justify-content:center;
+    margin-top:14px;
+  }
+}
+/* =========================
+   Meet the Owner — Center Balance Fix
+========================= */
+
+/* Center the text block within the grid column */
+#about .two-col {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Let the content box sit centered within its space */
+#about .content-box {
+  margin: 0 auto;
+  text-align: left;           /* keep natural paragraph alignment */
+  justify-self: center;
+  max-width: 520px;
+}
+
+/* Adjust the grid to be more even visually (less image dominance) */
+#about .two-col {
+  grid-template-columns: 50% 50%; /* was 1.25fr .75fr before */
+}
+
+/* Optional: on really wide screens, keep it elegant */
+@media (min-width: 1440px) {
+  #about .two-col {
+    grid-template-columns: 48% 52%;
+  }
+}
+@media (max-width: 768px) {
+  /* Stack neatly with centered alignment */
+  #about .two-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 24px; /* comfortable space between text and image */
+  }
+
+  /* Center text block elegantly */
+  #about .content-box {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+    max-width: 90%;
+  }
+
+  /* Card background scales neatly */
+  #about .content-box::before {
+    inset: -10px -12px;
+    margin: 0 auto;
+  }
+
+  /* Center paragraph and remove drop cap */
+  .owner-copy {
+    text-align: center;
+    max-width: 42ch;
+    margin: 0 auto;
+  }
+  .owner-copy::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+  }
+
+  /* Center kicker and signature */
+  .owner-kicker {
+    margin: 0 auto 10px;
+  }
+
+  .owner-signoff {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  /* Center image perfectly */
+  #about .media-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #about .media-box img {
+    width: 88%;
+    max-width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+}
