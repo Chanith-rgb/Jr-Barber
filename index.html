@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JR’s Barbers | Book Your Style</title>
 
-  <!-- ===== SEO Essentials ===== -->
-  <meta name="description" content="JR’s Barbers in Remuera / Ōrākei — specialising in precision fades, men’s haircuts, and beard trims. Local Auckland barbers delivering sharp style and personal service. Book online today.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="JR’s Barbers">
+<!-- ===== SEO Essentials ===== -->
+<meta name="description" content="JR’s Barbers in Ōrākei — specialising in precision fades, men’s haircuts, and beard trims. Serving Orakei, Remuera, and Central Auckland with expert style and personal service. Book online today.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="JR’s Barbers">
 
-  <!-- ===== Local Keywords (light use only) ===== -->
-  <meta name="keywords" content="barber, barbershop, haircut, fade, beard trim, Auckland, Remuera, Orakei, men's grooming, JR’s Barbers">
+<!-- ===== Local Keywords (for search relevance, not shown to users) ===== -->
+<meta name="keywords" content="barber, barbershop, haircut, fade, beard trim, Auckland, Orakei, Remuera, Central Auckland, men's grooming, JR’s Barbers">
 
-  <!-- ===== Open Graph / Social Preview ===== -->
-  <meta property="og:title" content="JR’s Barbers | Remuera • Ōrākei • Central Auckland">
-  <meta property="og:description" content="Precision cuts and grooming in the heart of Auckland. Book your next fade or trim with JR’s Barbers in Remuera / Ōrākei.">
-  <meta property="og:image" content="assets/hero.webp">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jrsbarbers.netlify.app/">
+<!-- ===== Open Graph / Social Preview ===== -->
+<meta property="og:title" content="JR’s Barbers | Orakei">
+<meta property="og:description" content="Precision fades, classic cuts, and beard trims — trusted barbers in Orakei, near Remuera and Central Auckland. Book your next haircut today.">
+<meta property="og:image" content="assets/hero.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jrsbarbers.co.nz">
 
-  <!-- ===== Twitter Card (for link shares) ===== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JR’s Barbers | Remuera • Ōrākei • Central Auckland">
-  <meta name="twitter:description" content="Local barbershop specialising in precision fades, beard trims, and classic cuts.">
-  <meta name="twitter:image" content="assets/hero.webp">
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JR’s Barbers | Orakei">
+<meta name="twitter:description" content="Expert fades and beard trims in Orakei — serving Remuera and Central Auckland. Book online today.">
+<meta name="twitter:image" content="assets/hero.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -36,6 +36,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Almarai:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -64,11 +67,9 @@
 </header>
 
 
-
-
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-bg" src="assets/hero.webp" alt="">
+    <img class="hero-bg" src="assets/JR.jpeg" alt="">
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
@@ -255,7 +256,9 @@
       </div>
 
       <div class="center">
-        <a class="btn btn-outline pill" href="https://www.instagram.com/_jrsbarbers/?hl=en" target="_blank">Instagram</a>
+        <a class="btn btn-outline pill insta-btn" href="https://www.instagram.com/_jrsbarbers/?hl=en" target="_blank">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
       </div>
     </div>
   </section>
@@ -275,13 +278,19 @@
   
 </section>
 
- <!-- Static REVIEWS -->
+ <!-- REVIEWS -->
 <section id="reviews" class="section cream">
   <div class="container center">
     <h2 class="display">Cuts That Speak for Themselves</h2>
 
-    <div class="reviews-image-wrap">
+    <!-- Desktop Image -->
+    <div class="reviews-image-wrap reviews-desktop">
       <img src="assets/review.webp" alt="Google Reviews" class="reviews-image">
+    </div>
+
+    <!-- Mobile Image -->
+    <div class="reviews-image-wrap reviews-mobile">
+      <img src="assets/google.png" alt="Google Reviews (mobile)" class="reviews-image">
     </div>
 
     <div class="center space-top">
@@ -303,13 +312,19 @@
           <p>228 Orakei Road, Remuera,<br>Auckland 1050</p>
         </div>
 
-        <div class="contact-block">
-          <div class="label">Hours</div>
-          <p>Mon–Wed &nbsp; 9 AM – 6 PM<br>
-             Thu–Fri &nbsp;&nbsp;&nbsp;&nbsp; 9 AM – 7 PM<br>
-             Sat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 AM – 6 PM<br>
-             Sun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 AM – 5 PM (Walk-In Only)</p>
-        </div>
+    <div class="contact-block">
+  <div class="label">Hours</div>
+  <ul class="hours-list">
+    <li><span class="day">Mon–Wed</span><span class="time">9 AM – 6 PM</span></li>
+    <li><span class="day">Thu–Fri</span><span class="time">9 AM – 7 PM</span></li>
+    <li><span class="day">Sat</span><span class="time">9 AM – 6 PM</span></li>
+    <li><span class="day">Sun</span>
+      <span class="time">9 AM – 5 PM <span class="hours-note">(Walk-In Only)</span></span>
+    </li>
+  </ul>
+</div>
+
+
 
         <div class="contact-block">
           <div class="label">Phone</div>

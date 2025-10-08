@@ -361,3 +361,394 @@ strong{ font-weight:600; }
   max-width: 900px;
   margin: 24px auto 0;   /* matches your previous top gap */
 }
+/* Tighter gap between 'Our Services' heading and grid */
+#services .display { margin-bottom: 0.3em; }
+#services .services-modern { margin-top: 4px; }
+
+/* Instagram button */
+.insta-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 22px; border-radius:12px; background:transparent;
+  border:1px solid var(--cream); color:var(--cream);
+  font-family:'Almarai',sans-serif; font-weight:500; font-size:15px;
+  transition:all .25s ease;
+}
+.insta-btn:hover{ background:var(--cream); color:var(--dark); }
+.insta-btn i{ font-size:18px; }
+
+/* Hero heading polish */
+.hero-content h1{ color:#f5f0e6; text-shadow:0 2px 6px rgba(0,0,0,.35); }
+
+/* Services: hide image on mobile (desktop unchanged) */
+@media (max-width:768px){
+  #services .media-box{ display:none; }
+}
+
+/* Services: revert to normal (NOT centered) */
+#services .content-box{
+  /* ensure left alignment if something else tried to center it */
+  text-align:left; align-items:flex-start; justify-content:center;
+  padding-right:0;
+}
+
+/* ------------------------------
+   CONTACT — compact + clear hierarchy
+------------------------------ */
+
+/* Section spacing */
+#contact.section{ padding:48px 0; background:var(--dark); color:#e8e0d5; }
+@media (max-width:768px){ #contact.section{ padding:36px 0; } }
+
+/* Column rhythm */
+.contact-left{ display:flex; flex-direction:column; gap:8px; }
+
+/* Tight blocks */
+.contact-block{ margin:4px 0; }
+
+/* Labels: bold + darker */
+.contact-block .label{
+  font-family:'Almarai',sans-serif; font-weight:700; font-size:15.5px;
+  color:#cbbba3; letter-spacing:.25px; margin-bottom:4px;
+}
+
+/* Body text: lighter supporting tone */
+.contact-block p,
+.contact-block a{
+  font-family:'Almarai',sans-serif; font-size:16px; line-height:1.45;
+  color:#e8e0d5; margin:0; text-decoration:none;
+}
+
+/* Hours list — narrow, aligned, compact */
+.hours-list{
+  list-style:none; margin:6px 0 0 0; padding:0; gap:2px;
+  display:grid; max-width:280px; text-align:left;
+}
+.hours-list li{
+  display:grid; grid-template-columns:110px 1fr; align-items:baseline;
+  padding:2px 0; border-bottom:1px dashed rgba(255,255,255,.06);
+  font-size:16px;
+}
+.hours-list li:last-child{ border-bottom:none; }
+.hours-list .day{ font-weight:700; color:#cbbba3; }
+.hours-list .time{
+  justify-self:end; text-align:right; color:#e8e0d5;
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.hours-list .hours-note{
+  display:block; white-space:normal; font-size:.9em; color:#b9ad9f; margin-top:2px;
+}
+@media (max-width:768px){
+  .hours-list{ max-width:240px; }
+  .hours-list li{ grid-template-columns:108px 1fr; font-size:15px; }
+}
+/* Restore original map height and sizing */
+.contact-right iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;        /* restores the tall, original size */
+  border-radius: 12px;
+  border: none;
+}
+
+
+/* =======================================
+   Elegant Subtle Button Hover Styling
+======================================= */
+
+/* --- Dark Buttons --- */
+.btn-dark {
+  background: var(--ink);
+  color: var(--cream);
+  border: 1px solid var(--ink);
+  transition: all 0.25s ease;
+}
+.btn-dark:hover {
+  background: #423830;              /* softly lighter tone of var(--ink) */
+  border-color: #423830;
+  filter: brightness(1.05);         /* gentle lift */
+}
+
+/* --- Outline Buttons --- */
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(42,33,28,0.4);
+  transition: all 0.25s ease;
+}
+.btn-outline:hover {
+  background: rgba(42,33,28,0.06);  /* faint warm tint */
+  border-color: rgba(42,33,28,0.5);
+  color: var(--ink);
+}
+
+/* --- Pill Buttons (used for “View All” etc.) --- */
+.btn.pill {
+  background: #ece3d6;              /* soft warm beige */
+  color: var(--ink);
+  border: 1px solid #d9cab4;
+  transition: all 0.25s ease;
+}
+.btn.pill:hover {
+  background: #e2d6c6;              /* subtle darker shade on hover */
+  border-color: #cfbfa7;
+}
+
+/* --- Instagram / Social Button --- */
+.insta-btn {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--cream);
+  transition: all 0.25s ease;
+}
+.insta-btn:hover {
+  background: rgba(255,255,255,0.08); /* faint glow behind */
+  border-color: var(--cream);
+  color: var(--cream);
+}
+/* Default: show desktop image only */
+.reviews-mobile { display: none; }
+.reviews-desktop { display: block; }
+
+@media (max-width: 768px) {
+  .reviews-desktop { display: none; }
+  .reviews-mobile { display: flex; justify-content: center; }
+
+  /* Make the Google image smaller and centered */
+  .reviews-mobile .reviews-image {
+    width: 65%;              /* adjust size here (try 60–70%) */
+    max-width: 280px;        /* limits how large it can get */
+    border-radius: 10px;
+    margin: 12px auto 0;
+    display: block;
+  }
+
+  #reviews .center.space-top {
+    margin-top: 14px;        /* slightly tighter gap below */
+  }
+}
+/* =========================
+   MOBILE: fix contact alignment
+========================= */
+@media (max-width: 768px) {
+  /* Center entire contact section */
+  #contact .contact-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  #contact .contact-block {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  /* Hours table stays properly aligned */
+  .hours-list {
+    margin: 6px auto 0;
+    padding: 0;
+    width: fit-content;             /* centers the table as a block */
+    text-align: left;               /* keeps text alignment normal */
+    display: grid;
+    gap: 2px;
+  }
+
+  .hours-list li {
+    display: grid;
+    grid-template-columns: 110px 1fr;  /* fixed columns for clean alignment */
+    align-items: baseline;
+    padding: 3px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.06);
+    font-size: 15.5px;
+  }
+
+  .hours-list li:last-child {
+    border-bottom: none;
+  }
+
+  .hours-list .day {
+    text-align: left;               /* stays aligned to left */
+    color: #cbbba3;
+    font-weight: 700;
+  }
+
+  .hours-list .time {
+    text-align: right;              /* times stay aligned right */
+    color: #e3d9ce;
+    font-weight: 400;
+  }
+
+  .hours-list .hours-note {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 0.9em;
+    color: #b9ad9f;
+    margin-top: 2px;
+  }
+}
+@media (max-width: 768px) {
+  /* Center only the 'Our Services' heading text on mobile */
+  #services .content-box > .display {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  /* Center the booking description paragraph on mobile only */
+  .split-dark .split-inner .lede {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  /* Make the Google Map smaller on mobile */
+  #contact .contact-right iframe {
+    min-height: 260px;    /* was around 420px before */
+    height: 260px;
+    border-radius: 10px;
+  }
+}
+reviews-desktop .reviews-image {
+  width: 110%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  overflow: visible;
+}
+
+/* =========================
+   Reviews Section — Mobile Badge Only
+========================= */
+
+/* Hide mobile badge on desktop */
+.reviews-mobile { display: none; }
+
+/* Desktop image stays as-is */
+.reviews-desktop .reviews-image {
+  width: 110%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  overflow: visible;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  /* Hide desktop version */
+  .reviews-desktop { display: none; }
+
+  /* Show and refine only the mobile badge */
+  .reviews-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+  .reviews-mobile .reviews-image {
+    width: 65%;               /* smaller, balanced size */
+    max-width: 220px;
+    border-radius: 8px;
+    opacity: 0.95;            /* subtle blend */
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .reviews-mobile .reviews-image:hover {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  /* Section padding harmony */
+  #reviews.section {
+    padding: 40px 0 48px;
+    background: var(--cream);
+  }
+
+  /* Keep the "See All Reviews" button spacing neat */
+  #reviews .center.space-top {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #reviews .center.space-top {
+    margin-top: 28px;
+  }
+}
+
+/* =========================
+   Social Section — Tighter Vertical Spacing
+========================= */
+#social.section.dark {
+  padding-top: 40px;   /* was around 60px */
+  padding-bottom: 44px; /* was around 60px */
+}
+
+/* Slightly tighter again for mobile */
+@media (max-width: 768px) {
+  #social.section.dark {
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+}
+/* =========================
+   Owner Section — Tighter Vertical Spacing
+========================= */
+#about.section {
+  padding-top: 48px;   /* was around 72px */
+  padding-bottom: 52px; /* was around 72px */
+}
+
+/* Slightly tighter still on mobile */
+@media (max-width: 768px) {
+  #about.section {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .split-dark .center {
+    margin-top: 16px; /* slightly tighter on mobile */
+  }
+}
+@media (max-width: 768px) {
+  /* Reduce vertical padding for entire section */
+  #services.section {
+    padding-top: 36px;     /* was ~48px */
+    padding-bottom: 44px;  /* was ~60px */
+  }
+
+  /* Tighten the spacing between heading and grid */
+  #services .display {
+    margin-bottom: 0.5em;
+  }
+
+  /* Compact the grid layout slightly */
+  #services .services-modern {
+    gap: 4px;
+    width: 90%;
+    max-width: 380px;
+    margin-top: 2px;
+  }
+
+  /* Slim down each card */
+  #services .service-row {
+    padding: 6px 8px;          /* smaller card padding */
+    border-radius: 8px;
+  }
+
+  /* Slightly smaller text for balance */
+  #services .srv-name {
+    font-size: 13.5px;
+  }
+
+  #services .srv-meta {
+    font-size: 12px;
+  }
+
+  #services .srv-price {
+    font-size: 13px;
+  }
+}
