@@ -957,3 +957,81 @@ reviews-desktop .reviews-image {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   }
 }
+/* Clean, minimal two-letter dropcap */
+.dropcap {
+  float: left;
+  display: inline-block;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;            /* lighter, less shouty */
+  font-size: 2.6rem;           /* smaller, proportional */
+  line-height: 1;              /* keeps baseline aligned */
+  color: #4b4036;              /* softer than full black ink */
+  padding-right: 8px;
+  padding-top: 6px;
+  letter-spacing: -0.3px;
+  opacity: 0.9;                /* subtle tone */
+  vertical-align: top;
+  transform: translateY(2px);  /* nudges it into harmony with text */
+}
+
+/* Keep paragraph text flowing cleanly */
+.owner-copy {
+  overflow: hidden;
+}
+
+/* Disable on mobile */
+@media (max-width: 768px) {
+  .dropcap {
+    float: none;
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    padding: 0;
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Disable automatic pseudo dropcap entirely */
+.owner-copy::first-letter {
+  content: none !important;
+  all: unset !important;
+}
+
+/* Clean, minimal two-letter custom dropcap */
+.dropcap {
+  float: left;
+  display: inline-block;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: #4b4036;
+  padding-right: 8px;
+  padding-top: 6px;
+  letter-spacing: -0.3px;
+  opacity: 0.9;
+  vertical-align: top;
+  transform: translateY(2px);
+}
+
+/* Prevent text wrap glitches */
+.owner-copy {
+  overflow: hidden;
+}
+
+/* Mobile: inline, normal size */
+@media (max-width: 768px) {
+  .dropcap {
+    float: none;
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    padding: 0;
+    opacity: 1;
+    transform: none;
+  }
+}
